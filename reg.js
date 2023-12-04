@@ -27,7 +27,7 @@ function signUp() {
 
             alert('Registration successful. A verification email has been sent to your email address.');
             // Optionally redirect to the sign-in page
-            // window.location.href = 'signin.html';
+            // window.location.href = 'login.html';
         })
         .catch((error) => {
             const errorCode = error.code;

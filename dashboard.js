@@ -16,7 +16,7 @@ firebase.analytics();
 firebase.auth().onAuthStateChanged((user) => {
   if (!user) {
     // Redirect to login page if not signed in
-    window.location.href = "signin.html";
+    window.location.href = "login.html";
   }
 });
 
@@ -26,7 +26,7 @@ function signOut() {
     .signOut()
     .then(() => {
       console.log("User signed out");
-      window.location.href = "signin.html"; // Redirect to login page
+      window.location.href = "login.html"; // Redirect to login page
     })
     .catch((error) => {
       console.error("Sign out error:", error.message);
