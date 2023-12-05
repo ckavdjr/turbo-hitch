@@ -23,9 +23,18 @@ function signIn() {
     .then((userCredential) => {
       // Signed in
       const user = userCredential.user;
-      console.log("User signed in:", user);
-      window.location.href = "dashboard.html"; // Redirect to a new page
+
+      // Check if the user's email is verified
+      if (user.emailVerified) {
+        console.log("User signed in:", user);
+        window.location.href = "dashboard.html"; // Redirect to a new page
+      } else {
+        // User's email is not verified
+        alert("Please verify your email before signing in.");
+        firebase.auth().signOut(); // Sign out the user
+      }
     })
+
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
