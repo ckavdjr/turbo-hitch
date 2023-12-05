@@ -15,6 +15,9 @@ firebase.analytics();
 function signUp() {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
+  const name = document.getElementById("name").value;
+  const dob = document.getElementById("dob").value;
+  const state = document.getElementById("state").value;
 
   firebase
     .auth()
@@ -24,6 +27,18 @@ function signUp() {
       const user = userCredential.user;
       console.log("User registered:", user);
 
+      // Store additional user information in the Realtime Database
+      firebase
+        .database()
+        .ref("users/" + user.uid)
+        .set({
+          email: email,
+          name: name,
+          dob: dob,
+          state: state,
+          // Add other user data as needed
+        });
+
       // Send email verification
       sendEmailVerification();
 
@@ -31,7 +46,7 @@ function signUp() {
         "Registration successful. A verification email has been sent to your email address."
       );
       // Optionally redirect to the sign-in page
-      // window.location.href = 'login.html';
+      //window.location.href = "login.html";
     })
     .catch((error) => {
       const errorCode = error.code;
