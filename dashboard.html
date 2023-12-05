@@ -10,7 +10,15 @@
 
 <body>
     <h2>Welcome to the Dashboard</h2>
-    <!-- Your dashboard content goes here -->
+
+    <!-- Add these buttons for managing vehicles -->
+    <button onclick="openAddVehicleModal()">Add Vehicle</button>
+    <button onclick="openDeleteVehicleModal()">Delete Vehicle</button>
+
+    <div id="vehicles-list">
+        <!-- Display the list of vehicles here -->
+    </div>
+
     <button onclick="signOut()">Sign Out</button>
 
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>

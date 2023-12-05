@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Vehicle registration page">
+    <meta name="author" content="Aravind Haridas">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Vehicle</title>
+</head>
+
+<body>
+    <h2>Vehicle Registration</h2>
+    <form id="vehicle-registration-form">
+        <label for="vehicle-type">Type of Vehicle:</label>
+        <select id="vehicle-type" required>
+            <option value="car">Car</option>
+            <option value="bike">Bike</option>
+            <option value="bike">Scooter</option>
+        </select><br>
+
+        <label for="seating-capacity">Seating Capacity:</label>
+        <input type="number" id="seating-capacity" required><br>
+
+        <label for="number-plate">Number Plate:</label>
+        <input type="text" id="number-plate" required><br>
+
+        <button type="button" onclick="registerVehicle()">Register</button>
+    </form>
+
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+    <script src="add_vehicle.js"></script>
+</body>
+
+</html>
