@@ -20,7 +20,7 @@ firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
     firebase.auth().onAuthStateChanged((user) => {
       if (!user) {
         // Redirect to the login page if not signed in
-        window.location.href = 'index.html';
+        window.location.href = 'login.html';
       } else {
         // Optionally, you might perform other actions here
       }
